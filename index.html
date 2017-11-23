@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v2</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: #e2e2e2;
+        }
+        #page-head {
+            height: 50px;
+            background-color: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+        }
+        #page-head:after {
+            display:block;
+            clear: both;
+            content: '';
+        }
+        #page-title {
+            float: left;
+            margin-left: 10px;
+        }
+        #page-title img {
+            display: block;
+            height: 25px;
+            width: 80px;
+            margin-top: 13px;
+        }
+        #page-head-btn-group {
+            float: right;
+            list-style: none;
+        }
+        #page-head-btn-group:after {
+            display:block;
+            clear: both;
+            content: '';
+        }
+        #page-head-btn-group li {
+            float: left;
+        }
+        #page-head-btn-group img {
+            display: block;
+            height: 24px;
+            width: 24px;
+            margin-top: 13px;
+            margin-right: 12px;
+        }
+        #page-head-btn-group #page-head-my-avatar {
+            height: 24px;
+            width: 24px;
+            margin-top: 13px;
+            margin-right: 15px;
+            border-radius: 15px;
+        }
+        #page-body {
+            margin: 5px 5px;
+            background-color: white;
+            min-height: 260px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.22);
+        }
+        #top-info {
+            display:block;
+            clear: both;
+            content: '';
+            border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+        }
+        #top-info:after {
+            display:block;
+            clear: both;
+            content: '';
+        }
+        #unread-tips {
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #ccc;
+            float: left;
+            margin-left: 10px;
+        }
+        #assets-box {
+            float: right;
+            margin-right: 10px;
+            background-color: rgba(0,0,0, 0.07);
+            padding: 6px 12px;
+            margin-top: 6px;
+            border-radius: 15px;
+        }
+        #assets-box:after{
+            content: '';
+            display:block;
+            clear:both;
+        }
+        #assets-box *{
+            float: left;
+            display: block;
+            font-size: 13px;
+            height: 16px;
+            width: 16px;
+            line-height: 16px;
+            margin-left: 2px;
+            color: #666;
+        }
+        #tag-box {
+            font-size: 13px;
+            color: #555;
+            padding: 5px 5px;
+            border-bottom: 1px solid rgba(0,0,0,0.11);
+        }
+        #tag-box:after {
+            display: block;
+            content: '';
+            clear:both;
+        }
+        #tag-box li {
+            list-style: none;
+            float:left;
+            padding: 5px 5px;
+            border-radius: 5px;
+            margin-right: 2px;
+        }
+        #tag-box li.selected {
+            color: white;
+            background-color: #334;
+        }
+        #article-list {
+        }
+        #article-list .article-item {
+            list-style: none;
+            border-bottom: 1px solid rgba(0,0,0,0.11);
+            position: relative;
+        }
+        #article-list .avatar {
+            display: block;
+            position: absolute;
+            height: 24px;
+            weight: 24px;
+            left: 5px;
+            top:5px;
+            border-radius: 5px;
+        }
+        #article-list .article-main {
+            margin-left: 40px;
+            margin-right: 70px;
+        }
+        #article-list .article-user-type {
+            padding-top: 5px;
+        }
+        #article-list .article-user-type:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        #article-list .article-user-type * {
+            color: #999;
+            float: left;
+            display: block;
+            font-size: 12px;
+            line-height: 12px;
+            height: 20px;
+            box-sizing: border-box;
+            padding: 4px 4px;
+        }
+        #article-list .article-type {
+            background-color: #f5f5f5;
+        }
+        #article-list .article-user-type .article-user {
+            color: #778087;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        #article-list .article-content {
+            color: #778087;
+            font-size: 16px;
+            padding: 3px 0;
+            line-height: 20px;
+            word-break: break-all;
+        }
+        #article-list .article-extend-info {
+            padding: 8px 0;
+        }
+        #article-list .article-extend-info * {
+            float:left;
+            font-size: 11px;
+            color: #ccc;
+            height: 11px;
+            line-height: 11px;
+            margin-right: 4px;
+        }
+        #article-list .article-extend-info:after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+        #article-list .article-last-reply {
+            color: #778087;
+            font-weight: bold;
+        }
+        #article-list .reply-count {
+            position: absolute;
+            line-height: 14px;
+            background-color: #aab0c6;
+            max-width: 70px;
+            overflow: hidden;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div id="page-head">
+        <div id="page-title">
+            <img src="//v2ex.assets.uxengine.net/site/logo@2x.png?m=1346064962">
+        </div>
+        <ul id="page-head-btn-group">
+            <a href="javascript:void(0)"><li><img id="page-head-my-avatar" src="//v2ex.assets.uxengine.net/avatar/1846/253d/223498_normal.png?m=1504858198"></li></a>
+            <a href="javascript:void(0)"><li><img src="http://v2ex.com/static/img/neue_notepad.png"></li></a>
+            <a href="javascript:void(0)"><li><img src="http://v2ex.com/static/img/neue_comment.png"></li></a>
+            <a href="javascript:void(0)"><li><img src="http://v2ex.com/static/img/neue_config.png"></li></a>
+            <a href="javascript:void(0)"><li><img src="http://v2ex.com/static/img/flat_more.png"></li></a>
+        </ul>
+    </div>
+
+    <div id="page-body">
+        <div id="top-info">
+            <div id="unread-tips">0条未读提醒</div>
+            <div id="assets-box">
+                <div>37</div>
+                <img src="//v2ex.assets.uxengine.net/static/img/silver.png">
+                <div>97</div>
+                <img src="//v2ex.assets.uxengine.net/static/img/bronze.png">
+            </div>
+        </div>
+        <ul id="tag-box">
+            <a><li class="selected">技术</li></a>
+            <a><li>创意</li></a>
+            <a><li>好玩</li></a>
+            <a><li>Apple</li></a>
+            <a><li>酷工作</li></a>
+            <a><li>交易</li></a>
+            <a><li>城市</li></a>
+            <a><li>问与答</li></a>
+            <a><li>最热</li></a>
+            <a><li>全部</li></a>
+            <a><li>R2</li></a>
+            <a><li>节点</li></a>
+            <a><li>关注</li></a>
+        </ul>
+        <ul id="article-list">
+            <li class="article-item">
+                <img class="avatar" src="//v2ex.assets.uxengine.net/avatar/8028/50df/149594_normal.png?m=1459157470">
+                <div class="article-main">
+                    <div class="article-user-type">
+                        <div class="article-type">云计算</div>
+                        <div>•</div>
+                        <div class="article-user">owenliang</div>
+                    </div>
+                    <div class="article-content">
+                        波兰小鸡又来了，这次黑五价格更凶残。8G 内存 30 年付！
+                    </div>
+                    <div class="article-extend-info">
+                        <div>1分钟前</div>
+                        <div>•</div>
+                        <div>最后回复</div>
+                        <div class="article-last-reply">xiao1999</div>
+                    </div>
+                    <div class="reply-count">64</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
